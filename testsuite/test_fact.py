@@ -52,12 +52,14 @@ Template.Slots:
 """
 
 
+from builtins import str
+from builtins import map
 class ctc_Fact(ctestcase):
     """test Fact objects"""
 
     def ctf_Fact_01(self):
         """Testing: Assert, FactList, Fact.PPForm"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -69,7 +71,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Fact_02(self):
         """Testing: Fact.Index, Fact.Exists, Fact.Retract"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -86,7 +88,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Fact_03(self):
         """Testing: FactListChanged"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -97,7 +99,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Fact_04(self):
         """Testing: InitialFact, Fact.Next, Fact.CleanPPForm"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -108,7 +110,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Fact_05(self):
         """Testing: LoadFactsFromString"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -120,7 +122,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Fact_06(self):
         """Testing: Fact.ImpliedSlots"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -129,7 +131,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Fact_07(self):
         """Testing: Rule.Refresh"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -145,7 +147,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Fact_08(self):
         """Testing: RefreshAgenda, ReorderAgenda"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -162,7 +164,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Template_01(self):
         """Testing: BuildTemplate, BuildRule, Run, Fact, Fact.Slots, Fact.Assert"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -186,7 +188,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Template_02(self):
         """Testing: Fact.AssignSlotDefaults, Template.Module"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -215,7 +217,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Template_03(self):
         """Testing: Template.Name, Template.Deletable, StdoutStream.Read"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -244,7 +246,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Template_04(self):
         """Testing: Template.InitialFact, Template.NextFact"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -269,7 +271,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Template_05(self):
         """Testing: Template.Slots.AllowedValues, Template.Slots.Cardinality"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -289,7 +291,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Template_06(self):
         """Testing: Template.Slots.HasDefault, Template.Slots.DefaultValue"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -308,7 +310,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Template_07(self):
         """Testing: Template.Slots.Exists, Template.Slots.Range"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -332,7 +334,7 @@ class ctc_Fact(ctestcase):
 
     def ctf_Template_08(self):
         """Testing: Template.Slots.Names, Template.Slots.Types"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -342,22 +344,22 @@ class ctc_Fact(ctestcase):
                 (slot s1 (type LEXEME))
                 (slot s2 (type INTEGER))
                 """, "test template")
-            n = map(str, t1.Slots.Names())
+            n = list(map(str, t1.Slots.Names()))
             self.assert_('s0' in n)
             self.assert_('s1' in n)
             self.assert_('s2' in n)
             self.assert_('s3' not in n)
-            t = map(str, t1.Slots.Types("s1"))
+            t = list(map(str, t1.Slots.Types("s1")))
             self.assert_('STRING' in t)
             self.assert_('SYMBOL' in t)
             self.assert_('INTEGER' not in t)
-            t = map(str, t1.Slots.Types("s2"))
+            t = list(map(str, t1.Slots.Types("s2")))
             self.assert_('SYMBOL' not in t)
             self.assert_('INTEGER' in t)
 
     def ctf_Template_09(self):
         """Testing: Template.Slots.IsSinglefield, Template.Slots.IsMultifield"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()

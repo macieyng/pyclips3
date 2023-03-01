@@ -1,6 +1,8 @@
 # test_print.py
 
-import sys, re, StringIO
+from future import standard_library
+standard_library.install_aliases()
+import sys, re, io
 
 """revision $Id: test_print.py 247 2005-02-23 00:28:47Z Franz $
 TESTS:
@@ -37,7 +39,7 @@ Class
 
 def i_returnOutput(func, args=None, kwargs=None):
     """execute a function while redirecting stdout"""
-    io = StringIO.StringIO()
+    io = io.StringIO()
     save_stdout = sys.stdout
     sys.stdout = io
     try:
@@ -66,7 +68,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_01(self):
         """Testing: PrintFacts"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -77,7 +79,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_02(self):
         """Testing: PrintRules, PrintAgenda"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -90,7 +92,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_03(self):
         """Testing: PrintClasses, PrintDeffacts, PrintDefinstances, PrintModules"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -114,7 +116,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_04(self):
         """Testing: PrintTemplates, PrintMessageHandlers"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -132,7 +134,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_05(self):
         """Testing: BuildGlobal, PrintGlobals, PrintGenerics"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -145,7 +147,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_06(self):
         """Testing: PrintInstances, PrintSubclassInstances"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -164,7 +166,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_07(self):
         """Testing: PrintAgenda, PrintBreakpoints, PrintFocusStack"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -186,7 +188,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_08(self):
         """Testing: Generic.PrintMethods"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -199,7 +201,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_09(self):
         """Testing: Rule.PrintMatches"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -211,7 +213,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_10(self):
         """Testing: Class.PrintMessageHandlers, Class.PrintAllMessageHandlers"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -232,7 +234,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_11(self):
         """Testing: BrowseClasses, Class.PreviewSend"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -246,7 +248,7 @@ class ctc_Print(ctestcase):
 
     def ctf_Print_12(self):
         """Testing: Module.BuildGlobal, Module.ShowGlobals"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()

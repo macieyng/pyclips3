@@ -1,5 +1,7 @@
 # test_cycnlst.py
 
+from builtins import str
+from builtins import range
 import sys, re
 
 """revision $Id: test_cycnlst.py 277 2006-05-27 17:04:33Z Franz $
@@ -126,7 +128,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesFact_01(self):
         """Testing: FactList, InitialFact, Fact.Next, Fact.Index"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -144,7 +146,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesClass_01(self):
         """Testing: ClassList, InitialClass, FindClass, Class.Next"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -162,7 +164,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesInstance_01(self):
         """Testing: InstancesChanged, InitialInstance, FindInstance, Instance.Next"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -182,7 +184,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesInstance_02(self):
         """Testing: Instance.IsValid, Instance.Remove, Instance.DirectRemove"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -199,7 +201,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesInstance_03(self):
         """Testing: Instance.Class, Instance.Slots, Instance.Send"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -217,7 +219,7 @@ class ctc_CyclesAndLists(ctestcase):
     def ctf_CyclesInstance_04(self):
         """Testing: Class.InitialInstance, Class.InitialSubclassInstance, {...}"""
         """         Class.NextInstance, Class.NextSubclassInstance"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -258,7 +260,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesRule_01(self):
         """Testing: InitialRule, RuleList, FindRule, Rule.Next, Rule.PPForm"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -273,7 +275,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesRule_02(self):
         """Testing: Rule.Name, Rule.Deletable, Rule.Remove, Rule.Module"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -293,7 +295,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesRule_03(self):
         """Testing: Rule.WatchActivations, Rule.WatchFirings"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -309,7 +311,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesTemplate_01(self):
         """Testing: InitialTemplate, TemplateList, FindTemplate, Template.Next"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -323,7 +325,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesTemplate_02(self):
         """Testing: Template.Deletable, Template.Module, Template.Watch"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -341,7 +343,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesMessageHandler_01(self):
         """Testing: MessageHandlerList"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -362,7 +364,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesMethod_01(self):
         """Testing: BuildGeneric, MethodList, Generic.MethodList, Generic.AddMethod"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -384,7 +386,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesMethod_02(self):
         """Testing: Generic.InitialMethod, Generic.NextMethod, Generic.MethodPPForm"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -400,7 +402,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesDeffacts_01(self):
         """Testing: InitialDeffacts, DeffactsList, Deffacts.Next, Deffacts.Name"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -416,7 +418,7 @@ class ctc_CyclesAndLists(ctestcase):
     def ctf_CyclesDeffacts_02(self):
         """Testing: FindDeffacts, Deffacts.PPForm, Deffacts.Deletable, {...}"""
         """         Deffacts.Module"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -435,7 +437,7 @@ class ctc_CyclesAndLists(ctestcase):
     def ctf_CyclesDefinstances_01(self):
         """Testing: InitialDefinstances, DefinstancesList, Definstances.Next, {...}"""
         """         Definstances.PPForm, BuildDefinstances"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -453,7 +455,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesDefinstances_02(self):
         """Testing: Definstances.Name, Definstances.Module, Definstances.Deletable"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -471,7 +473,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesGeneric_01(self):
         """Testing: BuildGeneric, Generic.Name, Generic.PPForm, Generic.Watch"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -489,7 +491,7 @@ class ctc_CyclesAndLists(ctestcase):
     def ctf_CyclesGeneric_02(self):
         """Testing: InitialGeneric, GenericList, FindGeneric, {...}"""
         """         Generic.Deletable, Generic.Module"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -506,7 +508,7 @@ class ctc_CyclesAndLists(ctestcase):
     def ctf_CyclesGlobal_01(self):
         """Testing: BuildGlobal, Global.Name, Global.PPForm, {...}"""
         """         GlobalsChanged, Global.ValueForm"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -527,7 +529,7 @@ class ctc_CyclesAndLists(ctestcase):
     def ctf_CyclesGlobal_02(self):
         """Testing: InitialGlobal, GlobalList, FindGlobal, Global.Watch, {...}"""
         """         Global.Deletable, Global.Next, Global.Module, Global.Value"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -545,7 +547,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesFunction_01(self):
         """Testing: InitialFunction, FunctionList, Function.Name, Function.Next"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -562,7 +564,7 @@ class ctc_CyclesAndLists(ctestcase):
     def ctf_CyclesFunction_02(self):
         """Testing: FindFunction, Function.PPForm, Function.Watch, {...}"""
         """         Function.Deletable, Function.Module"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -581,7 +583,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesModule_01(self):
         """Testing: InitialModule, BuildModule, FindModule, Module.Name"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -593,7 +595,7 @@ class ctc_CyclesAndLists(ctestcase):
 
     def ctf_CyclesModule_02(self):
         """Testing: ModuleList, Module.PPForm, Module.Next"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()

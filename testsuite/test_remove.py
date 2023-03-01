@@ -39,7 +39,7 @@ class ctc_Removals(ctestcase):
 
     def ctf_RemovalsFact_01(self):
         """Testing: Assert, Fact.Retract"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -51,7 +51,7 @@ class ctc_Removals(ctestcase):
 
     def ctf_RemovalsRule_01(self):
         """Testing: BuildRule, Rule.Remove"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -63,7 +63,7 @@ class ctc_Removals(ctestcase):
 
     def ctf_RemovalsTemplate_01(self):
         """Testing: BuildTemplate, Template.Remove"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -75,7 +75,7 @@ class ctc_Removals(ctestcase):
 
     def ctf_RemovalsDeffacts_01(self):
         """Testing: BuildDeffacts, Deffacts.Remove"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -87,7 +87,7 @@ class ctc_Removals(ctestcase):
 
     def ctf_RemovalsDefinstances_01(self):
         """Testing: BuildDefinstances, Definstances.Remove"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -100,7 +100,7 @@ class ctc_Removals(ctestcase):
 
     def ctf_RemovalsGeneric_01(self):
         """Testing: BuildGeneric, Generic.Remove"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -112,7 +112,7 @@ class ctc_Removals(ctestcase):
 
     def ctf_RemovalsGlobal_01(self):
         """Testing: BuildGlobal, Global.Remove"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()

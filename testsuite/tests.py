@@ -2,6 +2,8 @@
 # perform some unit tests
 # revision $Id: tests.py 188 2004-11-10 20:04:34Z Franz $
 
+from past.builtins import execfile
+from builtins import filter
 import unittest
 import glob
 

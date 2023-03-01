@@ -19,6 +19,7 @@ Eval
 """
 
 
+from builtins import str
 file01 = """
 (defrule duck-rule "The Duck Rule"
     ?f <- (duck)
@@ -36,7 +37,7 @@ class ctc_Toplevel(ctestcase):
         f = open("t.clp", 'w')
         f.write(file01)
         f.close()
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -50,7 +51,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_02(self):
         """Testing: Load, SaveFacts"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -63,7 +64,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_03(self):
         """Testing: LoadFacts"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -72,7 +73,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_04(self):
         """Testing: BLoad"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -84,7 +85,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_05(self):
         """Testing: Build"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -96,7 +97,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_06(self):
         """Testing: Eval"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -105,7 +106,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_07(self):
         """Testing: Call"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -120,7 +121,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_08(self):
         """Testing: SaveInstances, LoadInstances"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -137,7 +138,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_09(self):
         """Testing: BSaveInstances, BLoadInstances"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -154,7 +155,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_10(self):
         """Testing: Class.BuildInstance, FindInstanceLocal"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
@@ -164,7 +165,7 @@ class ctc_Toplevel(ctestcase):
 
     def ctf_Top_11(self):
         """Testing: RestoreInstancesFromString"""
-        for x in self.envdict.keys():
+        for x in list(self.envdict.keys()):
             e = self.envdict[x]
             e.Clear()
             e.Reset()
